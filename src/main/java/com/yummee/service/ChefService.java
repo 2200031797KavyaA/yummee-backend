@@ -1,6 +1,9 @@
 package com.yummee.service;
 
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.yummee.entity.Chef;
 import com.yummee.entity.Recipe;
@@ -12,4 +15,5 @@ public interface ChefService {
     List<Chef> getAllChefs();
     List<Recipe> getAllRecipesByChef(Long chefId);  // optional, cross-related
     void deleteChefById(Long id);
+    Chef uploadChefImage(Long chefId, MultipartFile file) throws IOException;
 }
